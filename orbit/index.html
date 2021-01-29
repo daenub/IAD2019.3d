@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
+    <script src="./assets/main.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-assets>
+        <img id="skybox" src="./assets/orbit.jpg" />
+        <img id="sun" src="./assets/sun.jpg" />
+        <img id="earth" src="./assets/earth.jpg" />
+        <img id="jupiter" src="./assets/jupiter.jpg" />
+        <img id="neptune" src="./assets/neptune.jpg" />
+        <img id="mars" src="./assets/mars.jpg" />
+        <img id="venus" src="./assets/venus.jpg" />
+        <img id="saturn" src="./assets/saturn.jpg" />
+      </a-assets>
+      <a-sky src="#skybox"></a-sky>
+
+      <a-entity camera="" position="7.5 7.5 7.5" wasd-controls="" rotation="-45 49.985 45" look-controls="" aframe-injected="" data-aframe-inspector-original-camera=""></a-entity>
+      <a-entity light="castShadow: true; type: point" position="0 0 0"></a-entity>
+
+      <a-entity id="solarsystem">
+        <a-sphere position="0 0 0" material="src: #sun; shader: flat" planet="rotationSpeed: 1; travel: false" id="sun"></a-sphere>
+
+        <a-sphere radius="0.4" id="planet-1" material="src: #jupiter" planet="travelingSpeed: 0.5; distance: 9"></a-sphere>
+          
+        <a-sphere radius="0.5" id="planet-2" material="src: #earth" planet="travelingSpeed: 0.25; distance: 10;"></a-sphere>
+        <a-sphere id="mond-1-2" radius="0.15" position="1.5 0 -1.5" material="src: #mars" planet="travelingSpeed: 0.5; distance: 1.5; positionOrigin: #planet-2;"></a-sphere>
+        <a-sphere id="mond-2-2" radius="0.1" position="2.533 0 -0.233" material="src: #mars" planet="travelingSpeed: 0.7; distance: 2.5; positionOrigin: #planet-2;"></a-sphere>
+
+        <a-sphere radius="0.25" id="planet-3" material="src: #venus" planet="travelingSpeed: 0.25; distance: 5; angle: 180"></a-sphere>
+
+        <a-sphere radius="0.45" id="planet-4" material="src: #neptune" planet="travelingSpeed: 0.25; distance: 12; angle: 75"></a-sphere>
+        <a-sphere id="mond-2-4" radius="0.15" position="2.533 0 -0.233" material="src: #mars" planet="travelingSpeed: 0.4; distance: 2.5; positionOrigin: #planet-4;"></a-sphere>
+        <a-sphere id="mond-1-4" radius="0.17" position="1.5 0 -1.5" material="src: #mars" planet="travelingSpeed: 0.45; distance: 2.5; positionOrigin: #planet-4;"></a-sphere>
+
+        <a-sphere radius="0.6" id="planet-5" material="src: #saturn" planet="travelingSpeed: 0.75; distance: 15;"></a-sphere>
+      </a-entity>
+    </a-scene>
+  </body>
+</html>

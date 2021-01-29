@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tent</title>
+  <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
+  <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
+</head>
+<body>
+  <a-scene>
+    <a-assets>
+      <a-asset-item id="tent" src="./assets/tent.gltf"></a-asset-item>
+      <a-asset-item id="tree" src="./assets/tree.gltf"></a-asset-item>
+    </a-assets>
+  
+    <!-- Using the asset management system. -->
+    <a-entity position="-3 0 0">
+      <a-gltf-model position="0 -0.850 0" src="#tent"></a-gltf-model>
+    </a-entity>
+
+    <!-- <a-gltf-model position="0 0 0" scale="0.005 0.005 0.005" src="#tree"></a-gltf-model> -->
+    
+    <a-entity environment="preset: yavapai; skyType: gradient; skyColor: #abcdef"></a-entity>
+
+  </a-scene>
+
+  <script>
+    const scene = document.querySelector("a-scene")
+    for (let index = 0; index < 10; index++) {
+      const element = document.createElement("a-gltf-model")
+      element.setAttribute("position", `${Math.random() * 10 - 5} 0 ${Math.random() * 10 - 5}`)
+      element.setAttribute("scale", "0.005 0.005 0.005")
+      element.setAttribute("src", "#tree")
+      scene.appendChild(element)
+    }
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/main.css">
+  <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
+</head>
+<body>
+  <a-scene light="defaultLightsEnabled: false">
+    <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4" data-ground></a-plane>
+    <a-sky color="#ECECEC"></a-sky>
+    <a-entity light="type: ambient; color: #BBB"></a-entity>
+    <a-entity light="type: directional; color: #FFF; intensity: 0.6" position="-0.5 1 1"></a-entity>
+  </a-scene>
+  <script src="./js/main.js"></script>
+</body>
+</html>
