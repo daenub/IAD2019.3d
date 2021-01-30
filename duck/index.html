@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Duck</title>
+  <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
+  <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
+</head>
+<body>
+  <a-scene>
+    <a-assets>
+      <a-asset-item id="duck" src="./assets/duck-1.gltf"></a-asset-item>
+    </a-assets>
+
+    <a-entity camera="" position="0 1.75469 6.119" wasd-controls="" rotation="" look-controls=""></a-entity>
+  
+    <!-- Using the asset management system. -->
+    <a-entity position="-12 -0.25 0" rotation="0 90 0" scale="10 10 10" animation="property: position; to: 12 -0.25 0; loop: true; dur: 10000; dir: alternate; easing: linear">
+      <a-gltf-model position="0 0 0" rotation="-12 0 0" src="#duck" animation="property: rotation; to: 12 0 0; loop: true; dur: 750; dir: alternate; easing: easeInOutQuad"></a-gltf-model>
+    </a-entity>
+
+    <!-- <a-gltf-model position="0 0 0" scale="0.005 0.005 0.005" src="#tree"></a-gltf-model> -->
+    
+    <a-entity environment="preset: threetowers; skyType: gradient; skyColor: #abcdef"></a-entity>
+
+  </a-scene>
+</body>
+</html>
